@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5.2'
+gem 'paperclip', '~> 4.2'
 
 group :development, :test do
 	gem 'sqlite3'
