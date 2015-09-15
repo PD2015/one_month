@@ -1,3 +1,11 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
+<% if user_signed_in? %>
+  <div class = "jumbotron center">
+    <h1> Welcome to the members area... </h1>
+  </div>
+<%end%>
+
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
   <div class = "box panel panel-default" >
