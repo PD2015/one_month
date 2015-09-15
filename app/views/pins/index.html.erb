@@ -12,7 +12,7 @@
       <%= link_to image_tag(pin.image.url (:thumb)), pin_path(pin)%>
       <div class="panel-body">
         <%= pin.description %>
-        <strong><p><%= pin.user.email if pin.user %></p></strong>
+        <strong><p><%= pin.user.name if pin.user %></p></strong>
         <div class = "actions" >    
           <% if pin.user == current_user %>
             <%= link_to edit_pin_path(pin) do %>
