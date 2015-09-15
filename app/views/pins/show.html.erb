@@ -1,5 +1,7 @@
 
-<strong><%= link_to 'Back', pins_path %></strong>
+<strong><%= link_to pins_path do %></strong>
+<span class = "glyphicon glyphicon-arrow-left"></span> Back
+<%end%>
 
 <div class = "row">
 	<div class = "col-md-offset-2 col-md-8">
@@ -12,7 +14,9 @@
 			  	<%= @pin.description %>
 				</p>
 				<% if @pin.user == current_user %>
-					<strong><%= link_to 'Edit', edit_pin_path(@pin) %></strong> 
+					<strong><%= link_to edit_pin_path(@pin) do %></strong> 
+						<span class= "glyphicon glyphicon-pencil"> </span> Edit
+					<%end%>
 				<%end%>
 			</div>
 		</div>
