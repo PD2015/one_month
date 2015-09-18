@@ -2,32 +2,32 @@
 <div class = "container-fluid">
   
   
-    <h1> Sign up </h1>
+    <h1 class = "form-text"> Sign up </h1>
   
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="form-group">
-      <%= f.label :name %><br />
+      <%= f.label :name, class: "form-text" %><br />
       <%= f.text_field :name, autofocus: true, class: "form-control" %>
     </div>
   
     <div class="field, form-group ">
-      <%= f.label :email %><br />
+      <%= f.label :email, class: "form-text" %><br />
       <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
 
     <div class="field, form-group" >
-      <%= f.label :password %>
+      <%= f.label :password, class: "form-text" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em class = "form-text">(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field, form-group" >
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, class: "form-text" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
     </div>
 

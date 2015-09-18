@@ -1,0 +1,729 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red86\green136\blue172;
+\red149\green149\blue149;\red83\green85\blue2;\red245\green245\blue245;\red0\green0\blue0;\red16\green121\blue2;
+\red65\green65\blue65;\red115\green0\blue2;\red0\green0\blue117;\red82\green0\blue83;\red11\green84\blue83;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Giving our application that Pinterest look with jQuery Masonry.\
+\pard\pardeftab720\sl500\sa270
+
+\f1\fs46 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl547
+\ls1\ilvl0
+\f2\fs36 \cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "http://masonry.desandro.com/"}}{\fldrslt \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 jQuery Masonry}}\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\ls1\ilvl0\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "https://github.com/kristianmandrup/masonry-rails"}}{\fldrslt \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 jQuery Masonry Gem}}\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\ls1\ilvl0\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "https://github.com/kossnocorp/jquery.turbolinks"}}{\fldrslt \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 jQuery Turbolinks Gem}}\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Add the masonry and Turbolinks gems \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /Gemfile
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+gem \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'jquery-turbolinks'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+gem \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'masonry-rails'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Always bundle install to install a new gem \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 terminal
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf8 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 $ bundle install
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. Modify our application.js file \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/assets/javascripts/application.js
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl420
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 //= require masonry/jquery.masonry\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 //= require masonry/jquery.imagesloaded.min\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl440
+
+\fs30 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 .\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 .\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. Modify our application.css file \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/assets/stylesheets/application.css
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+ \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 *=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 require\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'masonry/transitions'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. Update our Pins Index \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/index.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf12 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 <div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 id\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "pins"\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 @pins\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 each \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 do\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 |\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 |\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+    \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 <div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 class\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "box"\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  image_tag pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 image\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 url\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 medium\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 description %>\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 email \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user %>\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Show'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin_path\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  current_user %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Edit'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  edit_pin_path\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Destroy'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  method\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 delete\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  data\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  confirm\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Are you sure?'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+    \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 </div>\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 </div>
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6. Adding Pins directly from the header \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/layouts/_header.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+     \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <li>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'New Pin'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  new_pin_path \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 %></\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 li\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. Update our Pins stylesheet for Masonry CSS \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/assets/stylesheets/pins.css.scss
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl420
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 #pins \{\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  margin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 0\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 auto\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl420
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 box \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  margin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 5px\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  width\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 214px\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ;\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 box img \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  width\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 100\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 %;\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. Update our Pins JavaScript for Masonry \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/assets/javascripts/pins.js.coffee
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+$ \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ->\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  $\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 '#pins'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ).\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 imagesLoaded \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ->\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    $\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 '#pins'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ).\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 masonry\
+      itemSelector\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 '.box'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      isFitWidth\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 true
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 8. Add CoffeeScript syntax highlighting to Sublime Text \'a0\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl547
+\ls2\ilvl0
+\f2\fs36 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Command Shift P\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Package Control:Install Package\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 CoffeeScript\cb1 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 9. Modify our application.js file for jQuery Turbolinks \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/assets/javascripts/application.js
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl420
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 //= require jquery.turbolinks\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl420
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 10. Update our Pins Index for transitions and styling \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/index.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf12 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 <div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 id\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "pins"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 class\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "transitions-enabled"\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 @pins\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 each \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 do\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 |\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 |\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+    \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 <div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 class\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "box panel panel-default"\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  image_tag pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 image\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 url\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 medium\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+      \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 <div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 class\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "panel-body"\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 >\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 description %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 email \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Show'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin_path\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 user \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ==\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  current_user %>\
+          \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Edit'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  edit_pin_path\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+          \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Destroy'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  method\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 delete\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  data\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \{\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  confirm\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'Are you sure?'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \}\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+      \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 </div>\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 </div>\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 <%\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  %>\
+\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 </div>
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 11. Push Changes from your Computer to GitHub \'a0\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf8 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 $ git status\
+$ git add \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+$ git commit \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 -\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 am \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "Added jQuery masonry"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+$ git push
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 12. Add to the .gitignore file \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /.gitignore
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 /\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 public\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 /\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 system\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 /*
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\
+\
+\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Is Masonry working in development but not in production?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If this is the case you have pre-compiled assets which Heroku will skip. You need to remove the /public/assets folder and re-push your code to heroku.\
+}

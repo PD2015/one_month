@@ -2,7 +2,9 @@
 
 <% if user_signed_in? %>
   <div class = "jumbotron center">
-    <h1> Welcome to the members area... </h1>
+    <div class ="text-color-jumbo">
+      <h1> Welcome to the members area... </h1>
+    </div>
   </div>
 <%end%>
 
@@ -11,8 +13,10 @@
   <div class = "box panel panel-default" >
       <%= link_to image_tag(pin.image.url (:thumb)), pin_path(pin)%>
       <div class="panel-body">
+        <div class ="text-color-pin-info">
         <%= pin.description %>
         <strong><p><%= pin.user.name if pin.user %></p></strong>
+         </div>
         <div class = "actions" >    
           <% if pin.user == current_user %>
             <%= link_to edit_pin_path(pin) do %>

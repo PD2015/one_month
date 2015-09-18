@@ -1,0 +1,247 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red86\green136\blue172;
+\red149\green149\blue149;\red0\green0\blue0;\red245\green245\blue245;\red16\green121\blue2;\red83\green85\blue2;
+\red65\green65\blue65;\red0\green0\blue117;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Heroku doesn't store images, so you need AWS for that\
+\pard\pardeftab720\sl500\sa270
+
+\f1\fs46 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources\cb1 \
+\pard\pardeftab720\sl547\sa250
+{\field{\*\fldinst{HYPERLINK "https://devcenter.heroku.com/articles/paperclip-s3"}}{\fldrslt 
+\f2\fs36 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 https://devcenter.heroku.com/articles/paperclip-s3}}
+\f2\fs36 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl547\sa250
+
+\i \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /Gemfile
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 gem \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'aws-sdk'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '< 2.0'
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note: This is different than the video to make sure you get the latest version up to 2.0. Use this variant instead.\cb1 \
+\cb3 And run bundle install:\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ bundle install 
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 config/environments/production.rb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 config\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 paperclip_defaults \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \{\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 storage \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 s3\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 s3_credentials \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \{\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 bucket \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  ENV\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'AWS_BUCKET'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ],\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 access_key_id \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  ENV\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'AWS_ACCESS_KEY_ID'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ],\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 secret_access_key \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  ENV\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'AWS_SECRET_ACCESS_KEY'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ]\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\pard\pardeftab720\sl420
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Signup for an AWS account \'a0\cb1 \
+\pard\pardeftab720\sl547
+{\field{\*\fldinst{HYPERLINK "http://aws.amazon.com/"}}{\fldrslt 
+\f2\fs36 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 http://aws.amazon.com/\
+}}\pard\pardeftab720\sl680\sa270
+\cf2 \cb3 Create an S3 bucket in AWS \'a0\cb1 \
+\cb3 Grant permission to everyone \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Actions -> Permissions\cb1 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Configure Heroku for AWS \'a0\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ heroku config\
+$ heroku config\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 set\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  AWS_BUCKET\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 pinteresting\
+$ heroku config\
+$ heroku config\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 set\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  AWS_ACCESS_KEY_ID\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =***\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 GET FROM AMAZON AWS\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ***\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ heroku config\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 set\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  AWS_SECRET_ACCESS_KEY\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =***\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 GET FROM AMAZON AWS\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ***\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ heroku config
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Add, commit and push to Git and Heroku\'a0\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ git add \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ git commit \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 -\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 am \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Add Amazon S3 for Paperclip uploads to Heroku"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ git push\
+$ git push heroku master\
+$ heroku open
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\
+\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 First Try:\
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 heroku restart\cf10 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Sometimes dynos need to be reset so new changes take effect.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Are your images not showing?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You might be getting the following error.\
+\pard\pardeftab720\sl440
+
+\f3\fs30 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Make sure your bucket is set to US Standard. If it isn't, create a new bucket and update your Heroku config to point to the new bucket name.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Are you getting "Signature does not match" errors?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If your secret key was generated with a "/" in it sometimes this can create problems. Regenerate your AWS secret key until it doesn't have a slash and update your code to use non-slash key. That should resolve this issue.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Nokogiri giving you trouble with the AWS gem?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Try checking out the instructions here:\
+http://nokogiri.org/tutorials/installing_nokogiri.html\
+For some users, this guide was more helpful:\
+http://jasdeep.ca/2013/10/installing-nokogiri-fails-os-x-mavericks/\
+Alternatively, you can try moving the aws-sdk gem into the production group. After doing this, you should be able to use "bundle install --without production" to move forward.\
+\
+\pard\pardeftab720\sl820\sa270
+
+\f1\fs76 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Seeing "ArgumentError (missing required :bucket option) in your Error logs?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Make sure you have the right config set:\cb1 \uc0\u8232 \cb3 $ heroku config:set S3_BUCKET_NAME=BUCKET_NAME_VALUE\
+instead of: \cb1 \uc0\u8232 \cb3 $ heroku config:set AWS_BUCKET=BUCKET_NAME_VALUE\
+}

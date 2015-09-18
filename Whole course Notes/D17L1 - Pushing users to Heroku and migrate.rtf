@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red0\green0\blue0;
+\red245\green245\blue245;\red83\green85\blue2;\red16\green121\blue2;\red65\green65\blue65;\red115\green0\blue2;
+\red0\green0\blue117;\red82\green0\blue83;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 You should regularly push your changes to Heroku to make sure everything is working in production. Don't forget to rake db:migrate if you made any database changes!\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Do the GIT Dance\cb1 \
+\pard\pardeftab720\sl420
+
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 $ git add \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 \
+$ git commit \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 -\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 am \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 "Your Message"\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 \
+$ git push
+\fs30 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Push to Heroku\cb1 \
+\pard\pardeftab720\sl420
+
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 $ git push heroku master
+\fs30 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl500\sa270
+
+\f1\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Q: How do I debug Heroku?\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f3\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 User the Heroku Logs\cb1 \
+\pard\pardeftab720\sl420
+
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 $ heroku logs \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 --\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 tail \
+CONTROL \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 +\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4  C \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 # To exit the Heroku Logs \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. Migrate your Heroku database\cb1 \
+\pard\pardeftab720\sl420
+
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 $ heroku run rake db\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 migrate
+\fs30 \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1. After uploading to the Heroku URL, I do not get the "Welcome" homescreen, but the "Application error". What did I do wrong?\
+\pard\pardeftab720\sl547\sa250
+
+\f3\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Did you try running 
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 $ heroku run rake db\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 :\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 migrate
+\f3\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ? That will run the migration (aka. build out your database) on Heroku and is necessary each time you make changes to your database structure.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. Devise.secret_key was not set. Please add the following to your Devise initializer: (RuntimeError)\
+\pard\pardeftab720\sl547\sa250
+
+\f3\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Do you see the error above in your Heroku logs? One simple fix for this is to add this to your config/initializers/devise.rb:\
+\pard\pardeftab720\sl420\sa250
+
+\f2\fs28 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 config\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 secret_key \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 =\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 'whatever_your_code_is'\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 Rails\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 env\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 .\cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 production\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 ?
+\f3\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl547\sa250
+\cf2 (Replace the whatever_your_code_is part with the code that you see in your Heroku logs error messages\
+Then commit and push your code again (you may have to restart your server too with heroku restart)\
+}

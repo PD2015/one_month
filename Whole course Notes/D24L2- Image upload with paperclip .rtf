@@ -1,0 +1,672 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red86\green136\blue172;
+\red149\green149\blue149;\red0\green0\blue0;\red245\green245\blue245;\red16\green121\blue2;\red83\green85\blue2;
+\red65\green65\blue65;\red0\green0\blue117;\red82\green0\blue83;\red11\green84\blue83;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Paperclip is a gem that allows you to upload images\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Install the paperclip gem\'a0\cb1 \
+\pard\pardeftab720\sl547
+{\field{\*\fldinst{HYPERLINK "https://github.com/thoughtbot/paperclip"}}{\fldrslt 
+\f2\fs36 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 https://github.com/thoughtbot/paperclip\
+}}\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /Gemfile
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 gem \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'paperclip'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '~> 4.2'
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Then run:\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ bundle install 
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/models/pin.rb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf11 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 Pin\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 ActiveRecord\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ::\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 Base\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+     belongs_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 user\
+     has_attached_file \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 styles \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \{\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 medium \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "300x300>"\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 thumb \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "100x100>"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 end
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Generate a paperclip migration\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ rails generate paperclip pin image
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Run and check the migration\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ rake db\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 migrate \
+$ rake db\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 migrate\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 status
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. Restart your server after adding a gem file\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ^\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 C\
+$ rails server
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. Edit the pin form\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/_form.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  form_for \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 @pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  html\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \{\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  multipart\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 true\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 do\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 |\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 f\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 |\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+.\
+.\
+.\
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <div\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 class\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "form-group"\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  f\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 label \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image %>\cf10 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl420
+\cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \'a0\'a0\'a0\'a0\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  f\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 file_field \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "form-control"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </div>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+.\
+.\
+.
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. Update the Pins Controller for strong parameters\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/controllers/concerns/pins_controller.rb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 def\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin_params\
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 params\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 require\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (:\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ).\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 permit\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (:\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 description\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 )\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 end\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6. Update the pins show view\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/show.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  image_tag \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 @pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 url %>\
+.\
+.\
+.
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. Update the pins index\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/index.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf11 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <h1>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Listing pins\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </h1>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <table>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <thead>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <tr>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Image\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Description\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 User\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th></th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th></th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <th></th>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </tr>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </thead>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <tbody>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 @pins\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 each \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 do\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 |\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 |\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <tr>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  image_tag pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 url\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (:\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 medium\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 )\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 description %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 user\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 email \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 if\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 user %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'Show'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin_path\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 )\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 if\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 user \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ==\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  current_user %>\
+          \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'Edit'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  edit_pin_path\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 )\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+          \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <td>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'Destroy'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  method\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 delete\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  data\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \{\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  confirm\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'Are you sure?'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </td>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+        \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 end\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </tr>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 end\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </tbody>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 </table>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <br>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\pard\pardeftab720\sl420
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 if\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  user_signed_in\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ?\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'New Pin'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  new_pin_path %>\
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 end\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 8. Delete pins made by non users\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ rails console\
+$ \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 Pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 first\
+$ pin \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 =\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 Pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 first\
+$ pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 destroy\
+$ \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 Pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 first\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 destroy
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 9. Update the pins show view for image size\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 /app/views/pins/show.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  image_tag \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 @pin\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 image\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 url\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 (:\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 medium\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 )\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+.\
+.\
+.
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 10. Commit changes\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 $ rails console\
+$ git add \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ git commit \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 -\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 am \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Add image upload with Paperclip"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+$ git push\
+$ git config \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 --\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 global\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  push\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 .\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 default\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  matching
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\
+\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Q: Is $ rails generate paperclip pin image failing?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 There is an issue on {\field{\*\fldinst{HYPERLINK "https://github.com/thoughtbot/paperclip/issues/1495"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 github}} that outlines the problem.\
+the fix is to update your gem to use\
+\pard\pardeftab720\sl440
+
+\f3\fs30 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 gem 'paperclip', github: 'thoughtbot/paperclip'\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 After you do this, you can run "bundle update" and you should be able to continue with the lesson.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Q: Are you seeing\'a0Paperclip::Errors::NotIdentifiedByImageMagickError?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You need to follow the steps outlined under\'a0{\field{\*\fldinst{HYPERLINK "https://github.com/thoughtbot/paperclip#image-processor"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 https://github.com/thoughtbot/paperclip#image-processor}}\'a0to add the appropriate path to development.rb\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Q: \'a0Are you seeing "has an extension that does not match its contents"?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This is a Windows specific issue that paperclip devs are working to resolve.\'a0Look in the config/initializers directory, and edit the file, called mine_types.rb by adding in the code below:\
+\pard\pardeftab720\sl440
+
+\f3\fs30 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 module Paperclip\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0   class MediaTypeSpoofDetector\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0     def spoofed?\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0       false\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0     end\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0   end\'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 end\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 See more at\'a0{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/23460108/cannot-save-image-by-paperclip-in-rails-on-windows-8"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 http://stackoverflow.com/questions/23460108/cannot-save-image-by-paperclip-in-rails-on-windows-8}}\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Q: \'a0Are you seeing\'a0Paperclip::Errors::MissingRequiredValidatorError\'a0?\
+\pard\pardeftab720\sl547\sa250
+
+\f2\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You'll need to add the following to your Pins model:\
+\pard\pardeftab720\sl440
+
+\f3\fs30 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]\
+}

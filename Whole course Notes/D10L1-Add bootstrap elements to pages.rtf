@@ -1,0 +1,377 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 Helvetica;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red83\green83\blue83;
+\red149\green149\blue149;\red0\green0\blue0;\red245\green245\blue245;\red83\green85\blue2;\red16\green121\blue2;
+\red0\green0\blue117;\red82\green0\blue83;\red65\green65\blue65;\red115\green0\blue2;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh11400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Bootstrap comes pre-built with things like buttons, navigation bars, and icons that you can use to make your web app look really nice, really fast.\
+\pard\pardeftab720\sl547\sa600
+{\field{\*\fldinst{HYPERLINK "https://github.com/onemonthrails/pinteresting-commits/tree/cb1879e2b01c89374aeb6ef71459d8eb9737fa94"}}{\fldrslt 
+\f1\fs36 \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Browse Source Code}}
+\f1\fs36 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Add a container to your app!\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 views/layouts/application.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6      \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "Home"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  root_path %>\
+     \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "About"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  about_path %>\
+     \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <div\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "container"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+          \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 yield\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+     \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </div>
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Create a _header.html.erb partial\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Create the file 
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 app\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 /\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 views\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 /\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 layouts\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 /\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 _header\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 html\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 erb
+\f1\fs36 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. Create link to partial\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 app/views/layouts/application.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6      \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  render \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 'layouts/header'\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. Add the nav bar\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 app/views/layouts/_header.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <nav\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "navbar navbar-default"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 role\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "navigation"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 <!-- Brand and toggle get grouped for better mobile display -->\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <div\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "navbar-header"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <button\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 type\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "button"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "navbar-toggle"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 data-toggle\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "collapse"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 data-target\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ".navbar-ex1-collapse"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <span\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "sr-only"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Toggle navigation\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </span>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <span\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "icon-bar"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ></span>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <span\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "icon-bar"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ></span>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <span\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "icon-bar"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ></span>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </button>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <a\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "navbar-brand"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 href\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "#"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Pinteresting\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </a>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </div>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\
+  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 <!-- Collect the nav links, forms, and other content for toggling -->\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <div\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "collapse navbar-collapse navbar-ex1-collapse"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <ul\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "nav navbar-nav navbar-right"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <li>\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "Home"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  root_path %>\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </li>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <li>\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "About"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  about_path %>\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </li>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </ul>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </div>\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 <!-- /.navbar-collapse -->\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </nav>
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. Require Bootstrap's JavaScript\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 app/assets/javascripts/application.js
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf8 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ...\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\pard\pardeftab720\sl420
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //= require jquery\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //= require jquery_ujs\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //= require bootstrap-sprockets\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //= require turbolinks\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //= require_tree .
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 6. Add viewport\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 views/layouts/application.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <meta\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 name\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "viewport"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 content\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "width=device-width, initial-scale=1.0"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 7. Add the jumbotron to the Home page\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 views/pages/home.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <div\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "jumbotron"\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 >\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+	\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <h1>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Welcome to my app!\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </h1>\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+	Click here to \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  link_to \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "Sign Up"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "#"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 "btn btn-primary"\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6  %>\
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 </div>
+\fs30 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 \
+\
+\
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Q: Does the nav bar look funky?\
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Some users have been getting the 2.1.1 bootstrap-sass gem which doesn't render the navbar correctly. You can check this by opening your Gemfile.lock and verifying the version.\
+If it says "bootstrap-sass (2.1.0.0)" then you can run the below command which should get you the latest version:\
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 bundle update bootstrap\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 -\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 sass}

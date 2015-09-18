@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 Helvetica;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red83\green83\blue83;
+\red0\green0\blue0;\red245\green245\blue245;\red65\green65\blue65;\red149\green149\blue149;\red115\green0\blue2;
+\red83\green85\blue2;\red82\green0\blue83;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Here I show how to set up a User model with Devise and migrate those changes to your database.\
+\pard\pardeftab720\sl547\sa600
+{\field{\*\fldinst{HYPERLINK "https://github.com/onemonthrails/pinteresting-commits/tree/a94ab79f929223675f7c00b495e7e554ba7c3eb1"}}{\fldrslt 
+\f1\fs36 \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Browse Source Code}}
+\f1\fs36 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Generate a User model\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ rails generate devise user
+\fs30 \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 This line above creates a User model for us and a new file: 
+\i \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 app/models/user.rb
+\i0 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl500\sa270
+
+\f2\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Q: Did you make a mistake generating a model?\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ rails destroy devise user \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 #deletes the generate command in case you made a mistake
+\fs30 \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 \
+\pard\pardeftab720\sl500\sa270
+
+\f2\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The model interacts with our database\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Go to 
+\i \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 db/migration
+\i0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  and see the files there should be something like
+\i \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 db/migration/20130922022322_devise_create_users.rb
+\i0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  #the number is the date you create it\cb1 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. Migrate your database\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ rake db\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 migrate
+\fs30 \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 This command takes the migration file and runs it, so that it generates tables in your database\cb1 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. Restart your server\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 CONTROL \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 +\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  C to \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 Restart\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  the \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 Server\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \
+$ rails server \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 # to start the server again
+\fs30 \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 \
+\pard\pardeftab720\sl547
+
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 You'll need to restart your application each time you install a gem or each time you run 
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $rake db\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 migrate
+\f1\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Q: Migrations not working with rake db:migrate?\
+\pard\pardeftab720\sl547\sa250
+
+\f1\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 There was an issue with specific versions of Devise causing it to generate a migration without the .rb extension. Navigate to your db/migrate/ folder and add .rb to the migration that you've generated. If you run rake db:migrate again it should run the migration.\
+}

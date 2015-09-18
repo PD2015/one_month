@@ -1,0 +1,295 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red86\green136\blue172;
+\red0\green0\blue0;\red245\green245\blue245;\red82\green0\blue83;\red83\green85\blue2;\red0\green0\blue117;
+\red65\green65\blue65;\red149\green149\blue149;\red16\green121\blue2;\red115\green0\blue2;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Using migrations, you can add attributes to your users. In this example, I'll show you how to add a name field to your users, but you can do the same thing with usernames, addresses, and anything else.\
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Create database migration to add name column \'a0\cb1 \
+\pard\pardeftab720\sl547
+{\field{\*\fldinst{HYPERLINK "http://guides.rubyonrails.org/migrations.html#creating-a-migration"}}{\fldrslt 
+\f2\fs36 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Ruby on Rails Migration Documentation\
+}}\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ rails generate migration \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 AddNameToUsers\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  name\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 string
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Run migration file locally\'a0\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ rake db\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 migrate
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl500\sa270
+
+\f1\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Optional - Run migration file on Heroku\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ heroku run rake db\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 migrate
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. Edit devise account settings to ask users for names when they sign up \'a0\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf11 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 app/views/devise/registrations/edit.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf8 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+     \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 div \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "form-group"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 >\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+       \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  f\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 label \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 %>\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+       \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  f\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 text_field \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "form-control"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 autofocus \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =>\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 true\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 %>\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+     \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 </\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 >\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. "White label" attribute on form for strong parameters \'a0\cb1 \
+\pard\pardeftab720\sl547
+{\field{\*\fldinst{HYPERLINK "https://github.com/plataformatec/devise#strong-parameters"}}{\fldrslt 
+\f2\fs36 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Devise Strong Parameters Documentation\
+}}\pard\pardeftab720\sl547\sa250
+
+\f2\i\fs36 \cf11 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 app/controllers/application_controller.rb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl500\sa270
+
+\f1\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Define a method in application controller to run with a before action\cb1 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf9 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 class\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 ApplicationController\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 ActionController\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ::\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Base\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+ \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 # Prevent CSRF attacks by raising an exception.\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+ \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 # For APIs, you may want to use :null_session instead.\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+ protect_from_forgery \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 with\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 exception\
+ before_filter \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 configure_permitted_parameters\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 devise_controller\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ?\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 protected\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\
+ \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 def\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  configure_permitted_parameters\
+   devise_parameter_sanitizer\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 for\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 (:\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 sign_up\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 )\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <<\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name\
+   devise_parameter_sanitizer\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 for\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 (:\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 account_update\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 )\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <<\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name\
+ \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 end\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 end
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+\pard\pardeftab720\sl680\sa270
+
+\f1\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 5. Add name field under devise registrations view.\'a0\cb1 \
+\pard\pardeftab720\sl547
+
+\f2\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 app/views/devise/registrations/new.html.erb\
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf8 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+      \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 div \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "form-group"\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 >\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+        \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  f\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 label \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 %>\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+        \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 <%=\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  f\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 text_field \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 name\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  autofocus\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 true\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ,\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 :\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "form-control"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 %>\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+      \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 </\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 div\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 >\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \
+\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 .
+\fs30 \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 \
+}

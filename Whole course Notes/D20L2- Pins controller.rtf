@@ -1,0 +1,255 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fnil\fcharset0 HelveticaNeue;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red83\green83\blue83;
+\red149\green149\blue149;\red0\green0\blue117;\red245\green245\blue245;\red0\green0\blue0;\red82\green0\blue83;
+\red83\green85\blue2;\red11\green84\blue83;\red16\green121\blue2;\red115\green0\blue2;\red65\green65\blue65;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 In this lesson we'll get a better understanding of controller actions\
+\pard\pardeftab720\sl547\sa600
+{\field{\*\fldinst{HYPERLINK "https://github.com/onemonthrails/pinteresting-commits/tree/4e8ba170896b2f4e08cdcd94db309ed112ca62b7"}}{\fldrslt 
+\f1\fs36 \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Browse Source Code}}
+\f1\fs36 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl547\sa250
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Let's clean-up the pins_controller.rb to remove the default stuff we don't need. By removing all that excess, this will also make it easier to understand what's going on in our controller.\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\i \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 app/controllers/pins_controller.rb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f2\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 class\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 PinsController\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ApplicationController\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  before_action \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 set_pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  only\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 [:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 show\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 edit\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 update\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 destroy\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ]\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  index\
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pins\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 all\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  show\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  edit\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  create\
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 new\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin_params\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 save\
+      redirect_to \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  notice\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'Pin was successfully created.'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 else\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      render action\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'new'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  update\
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 if\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 update\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin_params\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      redirect_to \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ,\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  notice\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'Pin was successfully updated.'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 else\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+      render action\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 :\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'edit'\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  destroy\
+    \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 destroy\
+    redirect_to pins_url\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 private\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 # Use callbacks to share common setup or constraints between actions.\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  set_pin\
+      \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 @pin\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 find\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 (\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 params\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 [:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 id\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ])\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 # Never trust parameters from the scary internet, only allow the white list through.\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  pin_params\
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 params\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 .\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 require\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 (:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 pin\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ).\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 permit\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 (:\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 description\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 )\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end
+\fs30 \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 \
+}

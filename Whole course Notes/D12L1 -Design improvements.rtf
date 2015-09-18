@@ -1,0 +1,298 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 Helvetica;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red60\green60\blue60;\red255\green255\blue255;\red83\green83\blue83;
+\red86\green136\blue172;\red149\green149\blue149;\red0\green0\blue117;\red245\green245\blue245;\red0\green0\blue0;
+\red82\green0\blue83;\red83\green85\blue2;\red16\green121\blue2;\red115\green0\blue2;\red65\green65\blue65;
+\red11\green84\blue83;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl740\sa540
+
+\f0\fs54 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 With a few simple changes you can make your app look a lot like Pinterest.\
+\pard\pardeftab720\sl547\sa600
+{\field{\*\fldinst{HYPERLINK "https://github.com/onemonthrails/pinteresting-commits/tree/9c85e8e40444a0a45c9960787bfb7bd6210fb24d"}}{\fldrslt 
+\f1\fs36 \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Browse Source Code}}
+\f1\fs36 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl500\sa270
+
+\f2\fs46 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl547
+\ls1\ilvl0
+\f1\fs36 \cf5 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "https://sublime.wbond.net/installation#st2"}}{\fldrslt \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Sublime Text Package Control}}\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\ls1\ilvl0\cf5 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}{\field{\*\fldinst{HYPERLINK "https://packagecontrol.io/packages/Better%20CoffeeScript"}}{\fldrslt \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ST3 Alternate Package (Check it out!)}}\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Update nav bar with a container\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf6 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 apps/views/layouts/_header.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf7 \cb8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 <nav\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 class\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "navbar navbar-static-top navbar-default"\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 role\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "navigation"\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 >\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 <div\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 class\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "container"\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 >\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+...\
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 </div>\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 <!-- /.container -->\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 </nav>
+\fs30 \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 2. Style updates\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf6 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 app/assets/stylesheets/bootstrap_and_customization.css.scss
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf15 \cb8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 @import\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  url\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 http\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //fonts.googleapis.com/css?family=Lato:400,700);\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\
+$body\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 bg\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                                                    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 #ecf0f1;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$font\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 family\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 sans\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 serif\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                 \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'Lato'\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'Helvetica Neue'\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 Helvetica\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 Arial\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  sans\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 serif\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$navbar\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 height\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                                         \cf15 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 45px\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$navbar\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 default\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 bg\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                           white\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$navbar\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 default\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 brand\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 color\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9       \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 #c0392b;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$brand\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 primary\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                                     \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 #c0392b;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+$jumbotron\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 bg\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9                                          white\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\
+\cf15 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 @import\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 'bootstrap'\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\
+\pard\pardeftab720\sl420
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 .\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 center \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+     text\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 align\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  center\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 .\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 navbar\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 brand \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+     font\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 weight\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  bold\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 \}
+\fs30 \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 3. Install Package Control for Sublime Text 2\cb1 \
+\pard\pardeftab720\sl547
+{\field{\*\fldinst{HYPERLINK "https://sublime.wbond.net/installation#st2"}}{\fldrslt 
+\f1\fs36 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Installation Instructions}}
+\f1\fs36 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Remember to restart Sublime Text
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl547
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Command Shift P\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Package Control:Install Package\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 CoffeeScript\cb1 \
+\pard\pardeftab720\sl680\sa270
+
+\f2\fs62 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 4. Add a "center class" and "log in" button\cb1 \
+\pard\pardeftab720\sl547\sa250
+
+\f1\i\fs36 \cf6 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 /app/views/pages/home.html.erb
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl420
+
+\f3\fs28 \cf7 \cb8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 <div\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 class\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 =\cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "jumbotron center"\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 >\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+     \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 <h1>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 Welcome to my app!\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 </h1>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+     \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 <p>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+       \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <%=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  link_to \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "Log in"\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "#"\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 class\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "btn btn-default btn-lg"\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  %>\
+       \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <%=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  link_to \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "Sign up"\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "#"\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 class\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 :\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 "btn btn-primary btn-lg"\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  %>\
+  \cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 </p>\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9     \
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 </div>
+\fs30 \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 \
+}
